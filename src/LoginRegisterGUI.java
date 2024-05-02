@@ -277,13 +277,17 @@ public class LoginRegisterGUI {
             setLocationRelativeTo(null);
 
             JButton logoutButton = new JButton("Logout");
+            logoutButton.setPreferredSize(new Dimension(80, 30)); // Set the preferred size of the button
             logoutButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     openLoginGUI();
                 }
             });
-            getContentPane().add(logoutButton);
+            JPanel buttonPanel = new JPanel(new FlowLayout());
+            buttonPanel.add(logoutButton);
+
+            getContentPane().add(buttonPanel, BorderLayout.SOUTH);
             setVisible(true);
         }
 
